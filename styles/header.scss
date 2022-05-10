@@ -1,0 +1,40 @@
+header{
+    @apply flex justify-between py-[20px];
+
+    img{
+        @apply cursor-pointer w-[30px] relative;
+        animation-name: dropIn;
+        animation-duration: 0.2s;
+    }
+
+    ul{
+        @apply flex items-center text-[13px] gap-[10px];
+    }
+    
+    .slider{
+        @apply bg-sliderGray rounded-full shadow-inner mr-2 w-[40px] h-[18px];
+    }
+    
+    .toggleBtn{
+        @apply absolute bg-white rounded-full shadow h-[22px] w-[22px] top-[-2px] bg-no-repeat bg-center transition-all;
+        background-image: url(../public/sun.svg);
+    }
+
+    input:checked ~ .toggleBtn {
+        transform: translateX(84%);
+        background-image: url(../public/moon.svg);
+    }
+
+    input:checked ~ .slider {
+        @apply bg-sliderBlue transition;
+    }
+
+    a{
+        @apply text-text dark:text-white;
+    }
+}
+
+@keyframes dropIn {
+    0%   {top:-100px;}
+    100% {top:0px;}
+  }

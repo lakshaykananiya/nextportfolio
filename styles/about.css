@@ -1,0 +1,1 @@
+.intro{@apply p-6 rounded-xl mt-5 dark:text-white dark:border-darkWhite;border:1px solid #0101011a}.intro h2{@apply text-2xl font-[900]}.intro p{@apply my-5}

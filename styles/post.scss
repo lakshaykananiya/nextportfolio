@@ -1,0 +1,65 @@
+.post{
+    @apply dark:text-white;
+
+    .Header{
+        @apply py-5;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        @apply font-[900] leading-[1.3];
+    }
+
+    h1{
+        @apply text-[2em];
+    }
+
+    time{
+        @apply text-gray text-[13px];
+    }
+    
+    p{
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+
+    img{
+        @apply max-w-full block;
+    }
+}
+
+.author{
+    @apply flex bg-authorBack text-authorText p-5 rounded-xl dark:bg-authorBackDark;
+
+    img{
+        @apply rounded-full h-[60px] w-[60px];
+    }
+
+    p{
+        @apply ml-5 my-4;
+    }
+
+    .authorContent{
+        @apply flex items-center;
+    }
+}
+
+.related{
+    
+    h3{
+        @apply text-[1.17em];
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+
+    ul{
+        @apply list-disc;
+    }
+}
+
+.Footer{
+    @apply flex justify-between mt-[50px] pt-5;
+
+    .column{
+        @apply flex gap-[10px];
+    }
+}

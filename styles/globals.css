@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './header.css';
+@import './blog.css';
+@import './projects.css';
+@import './about.css';
+@import './post.css';
+
+body{
+    @apply flex justify-center w-full p-[20px] text-text dark:bg-backBlue;
+}
+
+.container{
+    width: calc(100vw - 40px);
+    max-width: 620px;
+}
+
+a{
+    @apply text-linkBlue;
+}

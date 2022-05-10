@@ -1,0 +1,35 @@
+.projects{
+    @apply rounded-[12px] overflow-x-auto p-[10px] text-[13px] mt-5 dark:text-white dark:border-darkWhite;
+    border: 1px solid #0101011a;
+
+    table{
+        @apply w-full;
+    }
+    
+    thead, tfoot{
+        @apply font-bold;
+    }
+
+    tfoot{
+        tr{
+            border: none;
+        }
+    }
+
+    tr{
+        @apply dark:border-darkWhite;
+        border-bottom: 1px solid #0101011a;
+    }
+
+    td{
+        @apply p-1 max-w-[130px] overflow-hidden whitespace-nowrap;
+
+        &:last-child{
+            @apply text-right;
+        }
+    }
+
+    .statusCell{
+        @apply text-status bg-statusBack py-[2px] px-1 rounded-[5px];
+    }
+}

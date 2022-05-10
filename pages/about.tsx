@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import Blog from '../components/Blog'
+import About from '../components/About'
 import Header from '../components/Header'
 import prisma from '../lib/prisma'
 
-const Home: NextPage = ({ postData }) => {
+const about: NextPage = ({projectData}) => {
   return (
     <>
       <Head>
@@ -13,15 +13,15 @@ const Home: NextPage = ({ postData }) => {
       </Head>
       <div className='container'>
         <Header />
-        <Blog postData={postData}/>
+        <About />
       </div>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const postData = await prisma.post.findMany();
-  return { props: { postData } };
+  const projectData = await prisma.projects.findMany();
+  return { props: { projectData } };
 };
 
-export default Home
+export default about

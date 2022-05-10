@@ -1,0 +1,12 @@
+.intro{
+    @apply p-6 rounded-xl mt-5 dark:text-white dark:border-darkWhite;
+    border: 1px solid #0101011a;
+
+    h2{
+        @apply text-2xl font-[900];
+    }
+
+    p{
+        @apply my-5;
+    }
+}
