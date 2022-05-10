@@ -28,7 +28,7 @@
 }
 
 .author{
-    @apply flex bg-authorBack text-authorText p-5 rounded-xl dark:bg-authorBackDark;
+    @apply flex bg-authorBack text-authorText p-5 rounded-xl dark:bg-authorBackDark items-center;
 
     img{
         @apply rounded-full h-[60px] w-[60px];
@@ -57,9 +57,13 @@
 }
 
 .Footer{
-    @apply flex justify-between mt-[50px] pt-5;
+    @apply flex justify-between mt-[50px] pt-5 flex-wrap gap-[8px];
 
     .column{
         @apply flex gap-[10px];
+    }
+
+    @media screen and (max-width: 420px) {
+        @apply justify-center;
     }
 }
