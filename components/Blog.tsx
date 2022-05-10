@@ -7,19 +7,19 @@ const Year = () => {
     );
 }
 
-const Date = (props) => {
+const Date = (props: any) => {
     return(
         <time className="date">{props.date}</time>
     );
 }
 
-const PostTitle = (props) => {
+const PostTitle = (props: any) => {
     return(
         <a href={"./"+props.link} className="postTitle">{props.title}</a>
     );
 }
 
-const Post = (props) => {
+const Post = (props: any) => {
     return(
         <article className="post">
             <Date date={moment(props.data.date, "YYYY-MM-DD").format("MMM DD, YYYY")}/>
@@ -28,7 +28,7 @@ const Post = (props) => {
     );
 }
 
-const ShowButton = (props) => {
+const ShowButton = (props: any) => {
     return(
         <button onClick={props.change}>
             <span>Show all</span>
@@ -38,7 +38,7 @@ const ShowButton = (props) => {
     );
 }
 
-const ShowAll = (props) => {
+const ShowAll = (props: any) => {
     return(
         <div className="showAll">
             <hr />
@@ -47,10 +47,10 @@ const ShowAll = (props) => {
     )
 }
 
-const Blog = ({ postData }) => {
+const Blog = ({ postData } : {postData: any}) => {
 
-    postData.sort((a, b) => {
-        return new global.Date(b.date) - new global.Date(a.date);
+    postData.sort((a: any, b: any) => {
+        return new global.Date(b.date).valueOf() - new global.Date(a.date).valueOf();
     })
     
     const [show, setShow] = useState(false);
@@ -60,7 +60,7 @@ const Blog = ({ postData }) => {
     return(
         <div className="blog">
             <Year />
-            {!show?postData.slice(0,15).map((p) => (<Post key={p.id} data={p}/>)):postData.map((p) => (<Post key={p.id} data={p}/>))}
+            {!show?postData.slice(0,15).map((p: any) => (<Post key={p.id} data={p}/>)):postData.map((p: any) => (<Post key={p.id} data={p}/>))}
             {!show&&(postData.length>15)?<ShowAll change={showChange}/>:null}
         </div>
     );

@@ -43,7 +43,7 @@ const Footer = () => {
     );
 }
 
-const Post = (props) => {
+const Post = (props: any) => {
     return (
         <>
             <div className="post">

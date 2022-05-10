@@ -1,4 +1,4 @@
-const Data = (props) => {
+const Data = (props: any) => {
     return(
         <tr>
             <td>{props.data.title}</td>
@@ -11,8 +11,8 @@ const Data = (props) => {
     );
 }
 
-const Projects = ({ projectData }) => {
-    const sum = projectData.reduce((a,b) => a + (b['dedication']), 0);
+const Projects = ({ projectData }: {projectData: any}) => {
+    const sum = projectData.reduce((a: any,b: any) => a + (b['dedication']), 0);
     return(
         <div className="projects">
             <table>
@@ -27,7 +27,7 @@ const Projects = ({ projectData }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {projectData.map((data) => (<Data key={data.id} data={data} />))}
+                    {projectData.map((data: any) => (<Data key={data.id} data={data} />))}
                 </tbody>
                 <tfoot>
                     <tr>

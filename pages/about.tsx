@@ -1,10 +1,9 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import About from '../components/About'
 import Header from '../components/Header'
-import prisma from '../lib/prisma'
 
-const about: NextPage = ({projectData}) => {
+const about: NextPage = () => {
   return (
     <>
       <Head>
@@ -18,10 +17,5 @@ const about: NextPage = ({projectData}) => {
     </>
   )
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const projectData = await prisma.projects.findMany();
-  return { props: { projectData } };
-};
 
 export default about

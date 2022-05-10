@@ -4,7 +4,11 @@ import Blog from '../components/Blog'
 import Header from '../components/Header'
 import prisma from '../lib/prisma'
 
-const Home: NextPage = ({ postData }) => {
+interface Prop {
+  postData: any
+}
+
+const Home: NextPage<Prop> = ({ postData }) => {
   return (
     <>
       <Head>

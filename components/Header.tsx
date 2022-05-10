@@ -5,7 +5,8 @@ const DarkModeToggle = () => {
 
     useEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById('toggle').checked =  true;
+            const ele = document.getElementById('toggle') as HTMLInputElement;
+            ele!=null?ele.checked=true:null;
             setMode(true);
         }
     }, []);

@@ -4,7 +4,11 @@ import Header from '../components/Header'
 import Projects from '../components/Projects'
 import prisma from '../lib/prisma'
 
-const projects: NextPage = ({projectData}) => {
+interface Prop {
+  projectData: any
+}
+
+const projects: NextPage<Prop> = ({projectData}) => {
   return (
     <>
       <Head>

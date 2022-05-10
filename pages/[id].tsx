@@ -5,7 +5,11 @@ import Post from '../components/Post'
 import prisma from '../lib/prisma'
 import ErrorPage from 'next/error'
 
-const post: NextPage = ({ postData }) => {
+interface Prop {
+  postData: any
+}
+
+const post: NextPage<Prop> = ({postData}) => {
   if(postData[0] == undefined) return <ErrorPage statusCode={404}/>;
   return (
     <>
@@ -15,7 +19,7 @@ const post: NextPage = ({ postData }) => {
       </Head>
       <div className='container'>
         <Header />
-        {postData.map((p) => (<Post key={p.id} data={p}/>))}
+        {postData.map((p: any) => (<Post key={p.id} data={p}/>))}
       </div>
     </>
   )
