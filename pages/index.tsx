@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Blog from '../components/Blog'
 import Header from '../components/Header'
@@ -23,7 +23,7 @@ const Home: NextPage<Prop> = ({ postData }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const postData = await prisma.post.findMany();
   return { props: { postData } };
 };
